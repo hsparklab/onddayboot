@@ -1,0 +1,19 @@
+package com.hsparklab.service;
+
+import org.springframework.stereotype.Service;
+
+import com.hsparklab.book.entity.Book;
+import com.hsparklab.book.entity.BookRepository;
+import com.hsparklab.dto.BookCreateDTO;
+
+@Service
+public class BookService {
+	private BookRepository bookRepository;
+	public BookService(BookRepository bookRepository) {
+		this.bookRepository = bookRepository;
+	}
+	public Integer insert(BookCreateDTO bookCreateDTO) {
+		Book book1 = Book.builder()
+				.
+	}
+}

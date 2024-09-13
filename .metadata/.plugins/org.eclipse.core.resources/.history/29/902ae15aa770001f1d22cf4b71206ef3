@@ -1,0 +1,19 @@
+package com.hsparklab.dto;
+
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
+import lombok.experimental.NonFinal;
+
+@Getter
+@Setter
+@NonNull
+public class BookEditDTO {
+	@NonNull
+	@Positive
+	private String title;
+	
+	@NonNull
+	private Integer price;
+
+}

@@ -1,0 +1,34 @@
+package com.hsparklab.service;
+
+import java.util.NoSuchElementException;
+
+import org.springframework.stereotype.Service;
+
+import com.hsparklab.book.entity.Book;
+import com.hsparklab.book.entity.BookRepository;
+import com.hsparklab.dto.BookCreateDTO;
+import com.hsparklab.dto.BookReadResponseDTO;
+
+@Service
+public class BookService {
+	private BookRepository bookRepository;
+	public BookService(BookRepository bookRepository) {
+		this.bookRepository = bookRepository;
+	}
+	public Integer insert(BookCreateDTO bookCreateDTO) {
+		Book book = Book.builder()
+				.title(bookCreateDTO.getTitle())
+				.price(bookCreateDTO.getPrice())
+				.build();
+		this.bookRepository.save(book);
+		return book.getBookId();
+	}
+	
+	public BookReadResponseDTO read(Integer bookId) throws NoSuchElementException {
+		Book book = this.bookRepository.findById(bookId).orElseThrow(()-> {});
+		BookReadResponseDTO bookReadResponseDTO = new BookReadResponseDTO();
+		bookReadResponseDTO.fromBook(book);
+		return bookReadResponseDTO;
+
+	}
+}

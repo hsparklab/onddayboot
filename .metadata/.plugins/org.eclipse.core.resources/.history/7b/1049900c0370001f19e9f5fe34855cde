@@ -1,0 +1,5 @@
+package com.hsparklab.dto;
+
+public class BookCreateDTO {
+
+}

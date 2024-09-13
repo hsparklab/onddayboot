@@ -1,0 +1,5 @@
+spring.application.name=onedayboot
+spring.servlet.encoding.charset=UTF-8
+spring.servlet.encoding.enabled=true
+spring.servlet.encoding.force=true
+server.port=8282

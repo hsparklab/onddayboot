@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Unprocessable Entity</title>
+</head>
+<body>
+<script type="text/javascript" th:inline="javascript">
+/*<![CDATA[*/
+	var message=/*[[${message}]]*/ 'message';
+	var loc=/*[[${location}]]*/ 'location';
+
+/*]]>*/
+
+
+</script>
+
+</body>
+</html>

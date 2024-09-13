@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>책 상세</h1>
+<p><label>제목</label> : <span th:text="${bookReadResponseDTO.title}"></span>
+<p><label>가격</label> : <span th:text="${#numbers.formatInteger(bookReadResponseDTO.price, 3, 'COMMA')}"></span>
+<p><label>입력일</label> : <span th:text="${#temporals.format(bookReadResponseDTO.insertDateTime, 'yyyy-MM-dd HH:mm')}"></span>
+<p><a th:href="@{/book/edit/{id}(id=${bookReadResponseDTO.bookId})}" th:text="수정"></a>
+
+</body>
+</html>
